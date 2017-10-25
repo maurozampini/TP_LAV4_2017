@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+
+body {
+  background: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.error-message{
+  color:red;
+}
+
+.full-width {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.flexbox-s {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexwrap-wrap {
+  flex-wrap: wrap;
+}
+
+.justifycontent-space-between {
+  justify-content: space-between;
+}
+.justifycontent-start{
+  justify-content: flex-start;
+}
+
+.justifycontent-end{
+  justify-content: flex-end;
+}
+
+.background-black {
+  background: black;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.row-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-button {
+  margin: 10px 0 10px 0;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-red {
+  color: red;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.color-yellow {
+  color: yellow;
+}
+
+.color-orange {
+  color: orange;
+}
