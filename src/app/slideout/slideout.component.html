@@ -1,0 +1,30 @@
+<div class="container flexbox-s" *ngIf="user | async as p">
+  <ul id="slide-out" class="side-nav flexbox-s flex-direction-column">
+    <li class="full-width">
+      <div class="divider"></div>
+    </li>
+    <li class="full-width">
+      <a class="waves-effect cursor-pointer">
+        <i class="material-icons">accessibility</i>{{p.user}}
+      </a>
+    </li>
+    <li class="full-width">
+      <a class="waves-effect cursor-pointer">
+        <i class="material-icons">flash_on</i>Juegos
+      </a>
+    </li>
+    <li class="full-width">
+      <a class="waves-effect cursor-pointer">
+        <i class="material-icons">settings</i>Configuración
+      </a>
+    </li>
+    <li class="full-width" (click)="logout()">
+      <a class="waves-effect cursor-pointer">
+        <i class="material-icons">highlight_off</i>Desconectarse
+      </a>
+    </li>
+    <li class="full-width">
+      <div class="divider"></div>
+    </li>
+  </ul>
+</div>
