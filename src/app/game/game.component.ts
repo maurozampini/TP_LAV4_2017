@@ -1,12 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user/user.model';
-import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
-import * as UserActions from '../user/user.actions';
-interface AppState {
-  user: User;
-}
-
 
 @Component({
   selector: 'app-game',
@@ -14,17 +6,11 @@ interface AppState {
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
-  user$: Observable<User>;
 
-  constructor(private store: Store<AppState>) { }
+  constructor() { }
   goToGame() {
-    this.testReducer();
+    alert('HOLO');
   }
-
-  testReducer() {
-    this.store.dispatch(new UserActions.Create('RowdyRuff'));
-  }
-
   ngOnInit() {
   }
 

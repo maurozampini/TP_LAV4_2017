@@ -1,60 +1,38 @@
-<div class="login-page">
-	<div class="img-container">
-		<div class="text-center pull-right photo">
-			<img src="images/flat-avatar.png" class="user-avatar img-circle img-responsive" />
-				<h1>TULUKA<br> <span>GAMES</span><br /><small>Mini Juegos</small></h1>
-			</div>
-		</div>
-		
-		<div class="form-content">
-			<form role="form" class="bottom-75" ng-submit="submit()">
-			<div class="table-form">
-				<div class="form-groups">
-          <mat-progress-bar mode="indeterminate" class="" *ngIf ="isLoading"></mat-progress-bar>
-          
-         
-            
-  
-         
-          
-          <div class="form-group">
+<div class="container full-width flexbox-s">
+    <div class="row full-width">
+      <div class="col m3 l4 hide-on-small-only"></div>
+      <div class="flex-direction-column  flexbox-s full-height col l4 m6 s12">
+        <div class="row form-header flexbox-s full-width flex-direction-column">
+          <h5 class="hide-on-small-only  hide-on-med-only">¡Hola!</h5>
+          <h5 class="">¡Bienvenido a Arcadia!</h5>
+          <p>Ingresa tus datos</p>
+        </div>
+        <div class="row form-body full-width">
+          <div class="col  hide-on-small-only fill m2 l2"></div>
+          <div class="col form-center s12 m8 l8">
+            <mat-progress-bar mode="indeterminate" class="" *ngIf ="isLoading"></mat-progress-bar>
+            <div class="form-controler">
               <mat-form-field>
-              <label>Correo electrónico</label>
-            <input matInput placeholder="Correo electrónico" [formControl]="email" required value="mauro@hotmail.com" class="form-control input-lg">
-            <mat-error  [ngClass]="email.invalid  ? 'error-message' : 'default-message' " *ngIf="email.invalid && email.dirty">{{err.getErrorMessageEmail(email)}}</mat-error>
-          </mat-form-field>
+                <label>Correo electrónico</label>
+                <input matInput placeholder="soyuncorreo@ejemplo.com" [formControl]="email" required>
+                <mat-error  [ngClass]="email.invalid  ? 'error-message' : 'default-message' " *ngIf="email.invalid && email.dirty">{{getErrorMessageEmail()}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="">
+              <mat-form-field>
+                <label>Contraseña <mat-hint *ngIf="password.invalid">{{password.value?.length || 0}}/8</mat-hint></label>
+                <input type="password" matInput   placeholder="c@NTr4s3ÑA" [formControl]="password" required>
+                <mat-error  [ngClass]="password.invalid  ? 'error-message' : 'default-message' " *ngIf="password.invalid && password.dirty">{{getErrorMessagePassword()}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row-button">
+                <button mat-raised-button class="form-button" color="primary" (click)="login()">Iniciar sesión</button>
+                <button mat-button [routerLink]="['/register']" class="form-button" color="primary">Registrarse</button>
+            </div>
           </div>
-					<div class="form-group">
-              <mat-form-field>
-                  <label>Contraseña <mat-hint *ngIf="password.invalid">{{password.value?.length || 0}}/8</mat-hint></label>
-                  <input type="password" class="form-control input-lg" matInput placeholder="Contraseña" [formControl]="password" required value="mainola1">
-            <mat-error  [ngClass]="password.invalid  ? 'error-message' : 'default-message' " *ngIf="password.invalid && password.dirty">{{err.getErrorMessagePassword(password)}}</mat-error>
-          </mat-form-field>
-					</div>
-          
-
-
-						
-				</div>	
-				<div class="button-container">
-					<button type="submit" class="btn btn-default login"><img src="images/arrow.png" alt=""></button>
-				</div>
-			</div>
-			<div class="remember">
-				<label class="checkbox1" for="Option"> 
-					<input id="Option" type="checkbox" class="">
-					<span></span>
-				</label>
-				recordarme
-				<span class="pass"> olvidé la contraseña</span>
-      </div>			
-      
-      <div class="row-button">
-          <button mat-raised-button class="form-button" color="primary" (click)="signIn()">Iniciar sesión</button>
-          <button mat-button [routerLink]="['/register']" class="form-button" color="primary">Registrarse</button>
+          <div class="col  hide-on-small-only fill m2 l2"></div>
+        </div>
       </div>
-
-			</form>
-		</div>			
-
-</div>
+      <div class="col m3 l4 hide-on-small-only"></div>
+    </div>
+  </div>

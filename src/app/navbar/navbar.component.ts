@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { User } from '../user/user.model';
-import { Store } from '@ngrx/store';
-import * as UserActions from '../user/user.actions';
 declare var jquery: any;
 declare var $: any;
-
-
-interface AppState {
-  user: User;
-}
 
 @Component({
   selector: 'app-navbar',
@@ -19,27 +10,16 @@ interface AppState {
 export class NavbarComponent implements OnInit {
   navbar;
   sticky;
-  show = false;
-  user$: Observable<User>;
-
-  constructor(private store: Store<AppState>) {
+  show = true;
+  constructor() {
+    this.showComponent();
     this.stickyNavBar();
-    addEventListener('showNav', () => {
-      console.log('Mostrar');
-      this.show = true;
-      this.initSideNav();
-    });
-    addEventListener('hideNav', () => {
-      console.log('Ocultar');
-      this.show = false;
-      $('.button-collapse').sideNav('destroy');
-    });
-    this.user$ = this.store.select('user');
-    console.log(this.user$);
   }
-
-  editText() {
-    this.store.dispatch(new UserActions.Create('RowdyRuffBoy'));
+  showComponent() {
+    addEventListener('showNav', () => {
+      console.log('llego el evento');
+      this.show = !this.show;
+    });
   }
 
   stickyNavBar() {
@@ -51,11 +31,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navbar = document.getElementById('navbar');
-    this.sticky = this.navbar.offsetTop;
-  }
-
-  initSideNav() {
     $('.button-collapse').sideNav({
       menuWidth: 250, // Default is 300
      // edge: 'lefth', // Choose the horizontal origin
@@ -64,5 +39,8 @@ export class NavbarComponent implements OnInit {
       onOpen: function(el) { /* Do Stuff* */ }, // A function to be called when sideNav is opened
       onClose: function(el) { /* Do Stuff* */ }, // A function to be called when sideNav is closed
     });
+
+    this.navbar = document.getElementById('navbar');
+    this.sticky = this.navbar.offsetTop;
   }
 }

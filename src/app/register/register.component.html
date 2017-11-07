@@ -15,25 +15,25 @@
             <mat-form-field>
               <label>Correo electrónico</label>
               <input matInput placeholder="soyuncorreo@ejemplo.com" [formControl]="email" required>
-              <mat-error  [ngClass]="email.invalid  ? 'error-message' : 'default-message' " *ngIf="email.invalid && email.dirty">{{err.getErrorMessageEmail(email)}}</mat-error>
+              <mat-error  [ngClass]="email.invalid  ? 'error-message' : 'default-message' " *ngIf="email.invalid && email.dirty">{{getErrorMessageEmail()}}</mat-error>
             </mat-form-field>
           </div>
           <div class="">
             <mat-form-field>
               <label>Contraseña <mat-hint *ngIf="password.invalid">{{password.value?.length || 0}}/8</mat-hint></label>
               <input type="password" matInput   placeholder="c@NTr4s3ÑA" [formControl]="password" required>
-              <mat-error  [ngClass]="password.invalid  ? 'error-message' : 'default-message' " *ngIf="password.invalid && password.dirty">{{err.getErrorMessagePassword(password)}}</mat-error>
+              <mat-error  [ngClass]="password.invalid  ? 'error-message' : 'default-message' " *ngIf="password.invalid && password.dirty">{{getErrorMessagePassword()}}</mat-error>
             </mat-form-field>
           </div>
           <div class="">
             <mat-form-field>
               <label>Contraseña de nuevo <mat-hint *ngIf="password.invalid" >{{password.value?.length || 0}}/8</mat-hint></label>
               <input type="password" matInput placeholder="c@NTr4s3ÑA" [formControl]="passwordAgain" required>
-              <mat-error  [ngClass]="err.getErrorMessagePasswordEquals(password, passwordAgain)  ? 'error-message' : 'default-message' " *ngIf="passwordAgain.invalid || passwordAgain.dirty">{{err.getErrorMessagePasswordEquals(password, passwordAgain)}}</mat-error>
+              <mat-error  [ngClass]="getErrorMessagePasswordAgain()  ? 'error-message' : 'default-message' " *ngIf="passwordAgain.invalid || passwordAgain.dirty">{{getErrorMessagePasswordAgain()}}</mat-error>
             </mat-form-field>
           </div>
           <div class="row-button">
-              <button mat-raised-button class="form-button" color="primary" (click)="signUs()">Registrarse</button>
+              <button mat-raised-button class="form-button" color="primary" (click)="login()">Registrarse</button>
               <button mat-button class="form-button" [routerLink]="['/login']" color="primary">Volver</button>
           </div>
         </div>

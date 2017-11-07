@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listgames.component.css']
 })
 export class ListgamesComponent implements OnInit {
-  showNavEvent = new Event('showNav');
 
-  constructor() {
-    dispatchEvent(this.showNavEvent);
-  }
+  constructor() { }
 
   ngOnInit() {
   }
