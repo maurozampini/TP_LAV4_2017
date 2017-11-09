@@ -1,86 +1,108 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
-import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
-import { LoginComponent } from './componentes/login/login.component';
-//  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-// import { AccordionModule } from 'ngx-bootstrap';
-// agrego las clases para utilizar ruteo
+import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatFormFieldModule, MatIcon} from '@angular/material';
+import { MatProgressBarModule, MatInputModule} from '@angular/material';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ListgamesComponent } from './listgames/listgames.component';
+import { GameComponent } from './game/game.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireAuthModule} from 'angularfire2/auth';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { MatSidenavModule} from '@angular/material';
+import { SlideoutComponent } from './slideout/slideout.component';
 
-import { ErrorComponent } from './componentes/error/error.component';
-import { PrincipalComponent } from './componentes/principal/principal.component';
-import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { MenuComponent } from './componentes/menu/menu.component';
-import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
-import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
-import { RuteandoModule } from './ruteando/ruteando.module';
-import { ListadoComponent } from './componentes/listado/listado.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule} from '@angular/material'
-// declaro donde quiero que se dirija
-/*
-const MiRuteo = [{path: 'error' , component: ErrorComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Principal' , component: PrincipalComponent , pathMatch: 'full'},
-{path: 'Adivina' , component: AdivinaElNumeroComponent},
-{path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-{path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-{path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-{path: '' , component: LoginComponent , pathMatch: 'full'},
+import {StoreModule} from '@ngrx/store';
+import {userReducer} from './user/user.reducer';
 
-{path: '**' , component: ErrorComponent} ];
-*/
+import { StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { ErrorService } from './services/error.service';
+import { ValidatefieldsService } from './services/validatefields.service';
+import { AuthService } from './services/auth.service';
+import { SwalService } from './services/swal.service';
+import { NavToService } from './services/nav-to.service';
+import { StoreService } from './services/store.service';
+import { CreateControlsService } from './services/create-controls.service';
+import { SimonComponent } from './simon/simon.component';
+import { ArrowPipe } from './arrow.pipe';
+import { WhoiamComponent } from './whoiam/whoiam.component';
+import { RouteErrorComponent } from './route-error/route-error.component';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
+import {JasperoAlertsModule} from '@jaspero/ng2-alerts';
 
-import { JuegoServiceService } from './servicios/juego-service.service';
-import { ListadosComponent } from './componentes/listados/listados.component';
-import { JuegosComponent } from './componentes/juegos/juegos.component';
-import { RegistroComponent } from './componentes/registro/registro.component';
-import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
-import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
-import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
-import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
+const appRoutes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: ListgamesComponent },
+  { path: 'game', component: SimonComponent },
+  { path: 'whoiam', component: WhoiamComponent },
+  { path: '*', component: RouteErrorComponent}
+];
 
+const config = {
+  apiKey: "AIzaSyB8MSAKNgrNIypOY3VAfx1ELAMOkeYAGDM",
+  authDomain: "tplaboratorio-aa43a.firebaseapp.com",
+  databaseURL: "https://tplaboratorio-aa43a.firebaseio.com",
+  projectId: "tplaboratorio-aa43a",
+  storageBucket: "",
+  messagingSenderId: "811038777855"
+};
 @NgModule({
   declarations: [
     AppComponent,
-    AdivinaElNumeroComponent,
-    ListadoDeResultadosComponent,
-    ErrorComponent,
-    PrincipalComponent,
+    NavbarComponent,
+    ListgamesComponent,
+    GameComponent,
     LoginComponent,
-    AgilidadAritmeticaComponent,
-    MenuComponent,
-    AdivinaMasListadoComponent,
-    AgilidadMasListadoComponent,
-    ListadoComponent,
-    ListadosComponent,
-    JuegosComponent,
-    RegistroComponent,
-    MenuCardComponent,
-    CabeceraComponent,
-    QuienSoyComponent,
-    AnagramaComponent
+    RegisterComponent,
+    HomeComponent,
+    HeaderComponent,
+    SlideoutComponent,
+    SimonComponent,
+    ArrowPipe,
+    WhoiamComponent,
+    RouteErrorComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
-    RuteandoModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule
-
-    // NgbModule.forRoot(MiRuteo),
-    // importo el ruteo
-    // RouterModule.forRoot(MiRuteo)
+    MatProgressBarModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule,
+    MatSidenavModule,
+    JasperoAlertsModule,
+    StoreModule.forRoot(
+      {user: userReducer}),
+      StoreDevtoolsModule.instrument({
+        maxAge: 10
+      })
   ],
-  providers: [ JuegoServiceService],
-  bootstrap: [AppComponent]
+  providers: [
+    AngularFireDatabase,
+    AngularFireDatabaseModule,
+    ErrorService,
+    ValidatefieldsService,
+    AuthService,
+    SwalService,
+    NavToService,
+    StoreService,
+    CreateControlsService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

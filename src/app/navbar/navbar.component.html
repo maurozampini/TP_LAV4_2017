@@ -1,66 +1,37 @@
-<div class="container flexbox-s">
-    <ul id="slide-out" class="side-nav flexbox-s flex-direction-column">
-      <li class="full-width">
-        <div class="divider"></div>
-      </li>
-      <li class="full-width">
-        <a class="waves-effect cursor-pointer" href="#!">
-          <i class="material-icons">accessibility</i>Usuario</a>
-      </li>
-      <li class="full-width">
-        <a class="waves-effect cursor-pointer" href="#!">
-          <i class="material-icons">flash_on</i>Juegos</a>
-      </li>
-      <li class="full-width">
-        <a class="waves-effect cursor-pointer" href="#!">
-          <i class="material-icons">settings</i>Configuración</a>
-      </li>
-      <li class="full-width">
-        <a class="waves-effect cursor-pointer" href="#!">
-          <i class="material-icons">highlight_off</i>Desconectarse</a>
-      </li>
-      <li class="full-width">
-        <div class="divider"></div>
-      </li>
-    </ul>
-  </div>
-  <div [hidden]="!show"class="navbar full-width">
-    <a href="#" data-activates="slide-out" id="navbar" class="button-collapse">
-      <i class="material-icons menu-icon icon color-orange">menu</i>
-    </a>
-  </div>
-  
-  <style>
-    .contaier {
-      background: red;
-    }
-    .navbar {
-      text-align: center;
-      cursor: pointer;
-    }
-  
-    .a {
-      background: red;
-    }
-  
-    .icon {
-      padding: .5em;
-    }
-  
-    #navbar {
-  
-      z-index: 1;
-      margin: 0;
-      padding: 0;
-      display: block;
-      background: black;
-      border-bottom: 1px solid orange;
-  
-    }
-  
-    .sticky {
-      position: fixed;
-      top: 0;
-      width: 100%
-    }
-  </style>
+<app-slideout [hidden]="!show"></app-slideout>
+
+<div [hidden]="!show" class="navbar full-width">
+  <a href="#" data-activates="slide-out" id="navbar" class="button-collapse">
+    <i class="material-icons menu-icon icon color-black">menu</i>
+  </a>
+</div>
+
+<style>
+  .navbar {
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .a {
+    background: #000000;
+  }
+
+  .icon {
+    padding: .5em;
+  }
+
+  #navbar {
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background: #FFFFFF;
+    border-bottom: 1px solid #000000;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+</style>

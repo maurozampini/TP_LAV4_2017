@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user/user.model';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import * as UserActions from '../user/user.actions';
+import { NavToService } from '../services/nav-to.service';
+interface AppState {
+  user: User;
+}
+
 
 @Component({
   selector: 'app-game',
@@ -6,11 +15,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
+  user$: Observable<User>;
 
-  constructor() { }
+  constructor(private store: Store<AppState>, private navTo: NavToService) { }
   goToGame() {
-    alert('HOLO');
+    // this.testReducer();
+    this.navTo.game();
   }
+
+  testReducer() {
+    this.store.dispatch(new UserActions.Create('RowdyRuff'));
+  }
+
   ngOnInit() {
   }
 

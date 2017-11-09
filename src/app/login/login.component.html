@@ -1,6 +1,6 @@
 <html>
 <div class=" full-width flexbox-s" >
-    <div class="row full-width">
+     <div class=" full-width"> <!-- row -->
       <div class="col m3 l4 hide-on-small-only"></div>
       <div class="container flex-direction-column  flexbox-s full-height col l4 m6 s12">
         <div class="row form-header flexbox-s full-width flex-direction-column">
@@ -9,6 +9,7 @@
             <span class="letter" data-letter="A">A</span>
             <span class="letter" data-letter="M">M</span>
             <span class="letter" data-letter="E">E</span>
+            <div class="foo">
             <span class="letter" data-letter="M">M</span>
             <span class="letter" data-letter="A">A</span>
             <span class="letter" data-letter="N">N</span>
@@ -16,9 +17,9 @@
             <span class="letter" data-letter="A">A</span>
           </div>         
         </div>
-
+      </div>  
         <div class="menu row form-body full-width">
-        <h4>Ingrese sus datos</h4>
+        <h4 class="h4">Ingrese sus datos</h4>
         <div class="row form-body full-width">
           <div class="col hide-on-small-only fill m2 l2"></div>
           <div class="col form-center s12 m8 l8">
@@ -38,8 +39,8 @@
               </mat-form-field>
             </div>
             <div class="row-button">
-                <button mat-raised-button class="waves-effect waves-light btn" color="md-colors" (click)="signIn()">Iniciar sesión</button>
-                <button mat-button [routerLink]="['/register']" class="waves-effect waves-light btn" color="primary">Registrarse</button>
+                <button mat-raised-button class="waves-effect waves-light blue-text lighten-2 btn" (click)="signIn()">Iniciar sesión</button>
+                <button mat-button [routerLink]="['/register']" class="waves-effect waves-red btn" color="primary">Registrarse</button>
             </div>
           </div>
         </div>

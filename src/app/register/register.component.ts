@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../services/auth.service';
+import { ValidatefieldsService } from '../services/validatefields.service';
+import { CreateControlsService } from '../services/create-controls.service';
+import { SwalService } from '../services/swal.service';
+import { ErrorService } from '../services/error.service';
 
 @Component({
   selector: 'app-register',
@@ -8,49 +13,41 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  options: FormGroup;
   isLoading = false;
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required, Validators.minLength(8)]);
-  passwordAgain = new FormControl('', [Validators.required]);
 
-  constructor(private auth: AngularFireAuth) {
-  }
-  getErrorMessageEmail() {
-    return this.email.hasError('required') ? 'Ingrese un email.' :
-        this.email.hasError('email') ? 'Ejemplo: correo@gmail.com' :
-            '';
-  }
+  controls: FormControl[] = [];
+  email: FormControl;
+  password: FormControl;
+  passwordAgain: FormControl;
 
-  getErrorMessagePassword() {
-    return this.password.hasError('required') ? 'Ingrese una contraseña.' :
-      this.password.hasError('minlength') ? 'Debe contener al menos 8 caracteres.' :
-      '';
-  }
+  constructor(
+    private afAuth: AuthService,
+    private validate: ValidatefieldsService,
+    private addControl: CreateControlsService,
+    private swal: SwalService,
+    private err: ErrorService) {
+    this.email = this.addControl.email();
+    this.password = this.addControl.password();
+    this.passwordAgain = this.addControl.password();
+    this.controls.push(this.email);
+    this.controls.push(this.password);
+    this.controls.push(this.passwordAgain);
+    }
 
-  getErrorMessagePasswordAgain() {
-    return this.password.value !== this.passwordAgain.value ? 'Las contraseñas tienen que ser iguales.'
-      : '';
-  }
-
-  login() {
-    if (this.email.invalid || this.password.invalid || this.password.value !== this.passwordAgain.value) {
-      alert('Complete correctamente los datos');
+  signUs() {
+    this.isLoading = true;
+    if (!this.validate.validateFields(this.controls) || this.password.value !== this.passwordAgain.value) {
+      this.swal.defaultAlertWithIcon('error', 'Complete todos los campos');
+      this.isLoading = false;
       return;
     }
-    this.setControlEnabled(false);
-    this.isLoading = true;
-    this.auth.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
-      .then(res => {
-        alert('Al toq prrro');
-        console.log(res);
+    this.afAuth.registerWhitEmailAndPassword(this.email.value, this.password.value)
+      .then(val => {
+        this.swal.defaultAlertWithIcon('success', 'Registro exitoso!');
+        // this.navTo.home();
       })
-      .catch(err  => {
-        this.setControlEnabled(true);
-        alert('La cagaste en algo.');
-        console.log(err);
-      })
-      .then( () => this.isLoading = false);
+      .catch(val => console.log(val))
+      .then( _ => this.isLoading = false);
   }
 
 
