@@ -30,20 +30,20 @@ import { SwalService } from './services/swal.service';
 import { NavToService } from './services/nav-to.service';
 import { StoreService } from './services/store.service';
 import { CreateControlsService } from './services/create-controls.service';
-import { SimonComponent } from './simon/simon.component';
 import { ArrowPipe } from './arrow.pipe';
 import { WhoiamComponent } from './whoiam/whoiam.component';
 import { RouteErrorComponent } from './route-error/route-error.component';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdivinaElNumeroComponent } from './adivina-el-numero/adivina-el-numero.component';
 import { JuegoServiceService } from './servicios/juego-service.service';
+import { ColoresComponent } from './colores/colores.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: ListgamesComponent },
-  { path: 'game', component: SimonComponent },
+  { path: 'colores', component: ColoresComponent },
   { path: 'adivina', component: AdivinaElNumeroComponent },
   { path: 'whoiam', component: WhoiamComponent },
   { path: '*', component: RouteErrorComponent}
@@ -68,11 +68,11 @@ const config = {
     HomeComponent,
     HeaderComponent,
     SlideoutComponent,
-    SimonComponent,
     ArrowPipe,
     WhoiamComponent,
     AdivinaElNumeroComponent,
-    RouteErrorComponent
+    RouteErrorComponent,
+    ColoresComponent
   ],
   imports: [
     BrowserModule,
