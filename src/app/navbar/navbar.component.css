@@ -1,5 +1,5 @@
 .example-container {
-    border: 1px solid rgb(218, 190, 190);
+    border: 1px solid rgba(0, 0, 0, 0.5);
   }
   
   .example-sidenav-content {

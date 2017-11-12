@@ -1,0 +1,22 @@
+<div align="center">
+  <br>
+  <div class="titulo">
+  <h2>  ADIVINA! </h2><br><br>
+</div>
+  
+   <input type="text" class= "textBox"placeholder="Ingrese numero" name="unNumero" [(ngModel)]="unJuego.numeroIngresado" [ngModelOptions]="{standalone: true}" required> <br><br>
+  
+  <button type=button class="button button1" value="Nuevo" name="Nuevo" (click)="generar()">Nuevo</button><br><br>
+  
+  <button type=button value="Verificar" class="button button2" name="Verificar" (click)="verificar()">Verificar</button><br><br><br>
+  
+  <div *ngIf="unJuego.validador==true">
+  <div class="alert alert-success" [hidden]="!unJuego.gano"> ¡Excelente! Usted ha adivinado</div >
+  <div class="alert alert-danger" [hidden]="unJuego.gano"> ¡Esta vez no se pudo! ¡Sigue jugando!</div>
+</div>
+
+<div *ngIf="false">
+    <app-login (enviarUsuario)="tomarUsuario($event)"></app-login>
+</div> 
+
+  </div>

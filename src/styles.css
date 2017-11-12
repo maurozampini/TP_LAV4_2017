@@ -5,6 +5,8 @@ html{
   background-image: url("assets/4C1.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 * {

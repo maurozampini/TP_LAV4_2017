@@ -9,4 +9,5 @@ export class NavToService {
   home = () => this.router.navigate([`/home`]);
   login = () => this.router.navigate([`/login`]);
   game = () => this.router.navigate([`/game`]);
+  adivina = () => this.router.navigate([`/adivina`])
 }

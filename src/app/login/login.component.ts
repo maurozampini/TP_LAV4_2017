@@ -11,8 +11,6 @@ import { ValidatefieldsService } from '../services/validatefields.service';
 import { CreateControlsService } from '../services/create-controls.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-import { AlertsService } from '@jaspero/ng2-alerts';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
     private storage: StoreService,
     private err: ErrorService,
     private swal: SwalService,
-    private jaspero: AlertsService,
     private db: AngularFireDatabase,
     private addControl: CreateControlsService) {
     this.email = this.addControl.email();
@@ -55,7 +52,6 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     if (!this.validate.validateFields(this.controls)) {
       this.swal.defaultAlertWithIcon('error', 'Complete todos los campos');
-      //this.jaspero.create('error', 'error!');
       this.isLoading = false;
       return;
     }
@@ -63,7 +59,6 @@ export class LoginComponent implements OnInit {
       .then(val => {
         this.storage.loadStoreUid(val.uid);
         this.swal.defaultAlertWithIcon('success', 'Bienvenido!');
-        //this.jaspero.create('success', 'Bienvenido!');
         this.navTo.home();
       })
       .catch(val => console.log(val))

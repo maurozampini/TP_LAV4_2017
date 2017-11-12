@@ -23,6 +23,11 @@ export class GameComponent implements OnInit {
     this.navTo.game();
   }
 
+  goToAdivina() {
+    // this.testReducer();
+    this.navTo.adivina();
+  }
+
   testReducer() {
     this.store.dispatch(new UserActions.Create('RowdyRuff'));
   }

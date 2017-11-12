@@ -35,7 +35,8 @@ import { ArrowPipe } from './arrow.pipe';
 import { WhoiamComponent } from './whoiam/whoiam.component';
 import { RouteErrorComponent } from './route-error/route-error.component';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
-import {JasperoAlertsModule} from '@jaspero/ng2-alerts';
+import { AdivinaElNumeroComponent } from './adivina-el-numero/adivina-el-numero.component';
+import { JuegoServiceService } from './servicios/juego-service.service';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: ListgamesComponent },
   { path: 'game', component: SimonComponent },
+  { path: 'adivina', component: AdivinaElNumeroComponent },
   { path: 'whoiam', component: WhoiamComponent },
   { path: '*', component: RouteErrorComponent}
 ];
@@ -69,6 +71,7 @@ const config = {
     SimonComponent,
     ArrowPipe,
     WhoiamComponent,
+    AdivinaElNumeroComponent,
     RouteErrorComponent
   ],
   imports: [
@@ -86,7 +89,6 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     MatSidenavModule,
-    JasperoAlertsModule,
     StoreModule.forRoot(
       {user: userReducer}),
       StoreDevtoolsModule.instrument({
@@ -102,6 +104,7 @@ const config = {
     SwalService,
     NavToService,
     StoreService,
+    JuegoServiceService,
     CreateControlsService],
   bootstrap: [AppComponent],
 })
