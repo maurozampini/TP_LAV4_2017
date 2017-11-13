@@ -1,0 +1,12 @@
+.titulo{
+    color: rgb(6, 138, 247);
+    font-family: cursive; 
+}
+
+.fondo{
+background-color: white; 
+height: 600px;
+width: 600px;
+margin-left: 30%;
+
+}

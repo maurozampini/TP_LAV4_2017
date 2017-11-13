@@ -37,6 +37,7 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import { AdivinaElNumeroComponent } from './adivina-el-numero/adivina-el-numero.component';
 import { JuegoServiceService } from './servicios/juego-service.service';
 import { ColoresComponent } from './colores/colores.component';
+import { AgilidadAritmeticaComponent } from './agilidad-aritmetica/agilidad-aritmetica.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
   { path: 'home', component: ListgamesComponent },
   { path: 'colores', component: ColoresComponent },
   { path: 'adivina', component: AdivinaElNumeroComponent },
+  { path: 'agilidad', component: AgilidadAritmeticaComponent },
   { path: 'whoiam', component: WhoiamComponent },
   { path: '*', component: RouteErrorComponent}
 ];
@@ -71,6 +73,7 @@ const config = {
     ArrowPipe,
     WhoiamComponent,
     AdivinaElNumeroComponent,
+    AgilidadAritmeticaComponent,
     RouteErrorComponent,
     ColoresComponent
   ],

@@ -19,13 +19,15 @@ export class GameComponent implements OnInit {
 
   constructor(private store: Store<AppState>, private navTo: NavToService) { }
   goToGame() {
-    // this.testReducer();
     this.navTo.game();
   }
 
   goToAdivina() {
-    // this.testReducer();
     this.navTo.adivina();
+  }
+
+  goToAgilidad() {
+    this.navTo.agilidad();
   }
 
   testReducer() {
