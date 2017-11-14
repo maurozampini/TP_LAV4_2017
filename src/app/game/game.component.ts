@@ -30,6 +30,14 @@ export class GameComponent implements OnInit {
     this.navTo.agilidad();
   }
 
+  goToAnagrama() {
+    this.navTo.anagrama();
+  }
+
+  goToPiedraPapelTijera() {
+    this.navTo.piedraPapelTijera();
+  }
+
   testReducer() {
     this.store.dispatch(new UserActions.Create('RowdyRuff'));
   }

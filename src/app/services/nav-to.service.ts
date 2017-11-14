@@ -11,4 +11,6 @@ export class NavToService {
   game = () => this.router.navigate([`/colores`]);
   adivina = () => this.router.navigate([`/adivina`]);
   agilidad = () => this.router.navigate([`/agilidad`]);
+  anagrama = () => this.router.navigate([`/anagrama`]);
+  piedraPapelTijera = () => this.router.navigate([`/piedraPapelTijera`]);
 }

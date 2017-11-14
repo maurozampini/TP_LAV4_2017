@@ -1,0 +1,31 @@
+.contenedor
+{
+    background-color: rgba(34, 122, 173, 0.3);
+    border:none !important;
+    border-color: #2e996d;
+    border-width: 3px;
+    border-radius: 25px 25px 25px 25px;
+    -moz-border-radius: 25px 25px 25px 25px;
+    -webkit-border-radius: 25px 25px 25px 25px;
+    border: 2px solid #000000;
+}
+
+.titulo{
+    color: rgb(6, 138, 247);
+    font-family: cursive; 
+}
+
+.contador{
+    color: rgb(10, 45, 73);
+    left: 350px;
+    top: 560px;
+    position:absolute;
+
+}
+
+.gano{
+    color: rgb(10, 45, 73);
+    left: 1050px;
+    top: 560px;
+    position:absolute;
+}

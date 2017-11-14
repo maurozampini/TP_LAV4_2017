@@ -38,6 +38,8 @@ import { AdivinaElNumeroComponent } from './adivina-el-numero/adivina-el-numero.
 import { JuegoServiceService } from './servicios/juego-service.service';
 import { ColoresComponent } from './colores/colores.component';
 import { AgilidadAritmeticaComponent } from './agilidad-aritmetica/agilidad-aritmetica.component';
+import { AnagramaComponent } from './anagrama/anagrama.component';
+import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -47,6 +49,8 @@ const appRoutes: Routes = [
   { path: 'colores', component: ColoresComponent },
   { path: 'adivina', component: AdivinaElNumeroComponent },
   { path: 'agilidad', component: AgilidadAritmeticaComponent },
+  { path: 'anagrama', component: AnagramaComponent },
+  { path: 'piedraPapelTijera', component: PiedraPapelTijeraComponent }, 
   { path: 'whoiam', component: WhoiamComponent },
   { path: '*', component: RouteErrorComponent}
 ];
@@ -74,6 +78,8 @@ const config = {
     WhoiamComponent,
     AdivinaElNumeroComponent,
     AgilidadAritmeticaComponent,
+    AnagramaComponent,
+    PiedraPapelTijeraComponent,
     RouteErrorComponent,
     ColoresComponent
   ],

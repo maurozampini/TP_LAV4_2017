@@ -1,0 +1,40 @@
+
+<div align="center" class="titulo">
+          <h3>ANAGRAMA!</h3><br><br>
+        </div>
+        <div align="center" class="titulo">
+        <h4>El objetivo del juego es poder ordenar las letras expuestas de forma tal que se forme una palabra. <br>
+          Para ello tienes como máximo tres intentos! Que te diviertas!
+        </h4>
+</div><br><br>
+
+<div class="container contenedor" align="center">
+    
+            <br><br>
+        <h4>Tu palabra es: </h4>
+        <h1 >{{miJuego.palabraAJugar}}</h1><br>
+        
+        <input type="text" name="palabraDelUsuario" [(ngModel)]="miJuego.palabraDelUsuario"><br><br>
+        
+        <input type="button" name= "Jugar" class="btn btn-warning" (click)="jugar()" value="JUGAR" style='width:250px; height:100px'><br><br>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <input type="button" name= "Verificar" class="btn btn-success" (click)="verificar(miJuego.palabraDelUsuario)" value="VERIFICAR" style='width:250px; height:100px'><br><br>
+        </div>
+
+        
+
+        <div class="col-md-4">
+          <input type="button" name= "Rendicion" class="btn btn-danger" (click)="rendirse()" value="ME RINDO" style='width:250px; height:100px'><br><br>
+        </div>
+        <div class="col-md-2"></div>
+
+        <div class="contador">
+        <h3>CONTADOR: {{miJuego.contador}}</h3>
+        </div>
+  </div>
+
+
+  <div class="gano">
+      <h3>{{miJuego.resultado}}</h3>
+  </div>
