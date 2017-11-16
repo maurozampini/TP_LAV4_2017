@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <br><br>
 <div align="center" class="titulo">
 <h3>PIEDRA, PAPEL O  TIJERA</h3>
@@ -5,23 +6,23 @@
 <br><br><br>
 <table border="0" width="60%" height="auto" align="center">
     <tr>
-        <td><img src="./assets/imagenes/piedra.jpg" border="1" width="200px" height="120px" (click)="Piedra()"></td>
-        <td><img src="./assets/imagenes/papel.jpg" border="1" width="200px" height="120px" (click)="Papel()"></td>
-        <td><img src="./assets/imagenes/tijera.jpg" border="1" width="200px" height="120px" (click)="Tijera()"></td>
+        <td><img src="./assets/imagenes/piedra.png" border="1" width="200px" height="120px" (click)="Piedra()"></td>
+        <td><img src="./assets/imagenes/papel.png" border="1" width="200px" height="120px" (click)="Papel()"></td>
+        <td><img src="./assets/imagenes/tijera.png" border="1" width="200px" height="120px" (click)="Tijera()"></td>
     </tr>
 </table>
 
 <br><br>
 <div *ngIf="juegoPPT.numeroRandom==1" align="center">
-    <img src="./assets/imagenes/piedra.jpg" border="1" width="200px" height="120px">
+    <img src="./assets/imagenes/piedra.png" border="1" width="200px" height="120px">
 </div>
 
 <div *ngIf="juegoPPT.numeroRandom==2" align="center">
-    <img src="./assets/imagenes/papel.jpg" border="1" width="200px" height="120px">
+    <img src="./assets/imagenes/papel.png" border="1" width="200px" height="120px">
 </div>
 
 <div *ngIf="juegoPPT.numeroRandom==3" align="center">
-    <img src="./assets/imagenes/tijera.jpg" border="1" width="200px" height="120px">
+    <img src="./assets/imagenes/tijera.png" border="1" width="200px" height="120px">
 </div>
 
 

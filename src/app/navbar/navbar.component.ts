@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { User } from '../user/user.model';
 import { Store } from '@ngrx/store';
 import * as UserActions from '../user/user.actions';
+import { NavToService } from '../services/nav-to.service';
 declare var jquery: any;
 declare var $: any;
 
@@ -22,7 +23,10 @@ export class NavbarComponent implements OnInit {
   show = false;
   user$: Observable<User>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>, private navTo: NavToService) {
+  
+
+
     this.stickyNavBar();
     addEventListener('showNav', () => {
       console.log('Mostrar');
@@ -36,6 +40,10 @@ export class NavbarComponent implements OnInit {
     });
     this.user$ = this.store.select('user');
     console.log(this.user$);
+  }
+
+  goToQuienSoy() {
+    this.navTo.quienSoy();
   }
 
   editText() {

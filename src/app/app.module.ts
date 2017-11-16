@@ -30,8 +30,7 @@ import { SwalService } from './services/swal.service';
 import { NavToService } from './services/nav-to.service';
 import { StoreService } from './services/store.service';
 import { CreateControlsService } from './services/create-controls.service';
-import { ArrowPipe } from './arrow.pipe';
-import { WhoiamComponent } from './whoiam/whoiam.component';
+import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 import { RouteErrorComponent } from './route-error/route-error.component';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdivinaElNumeroComponent } from './adivina-el-numero/adivina-el-numero.component';
@@ -40,6 +39,7 @@ import { ColoresComponent } from './colores/colores.component';
 import { AgilidadAritmeticaComponent } from './agilidad-aritmetica/agilidad-aritmetica.component';
 import { AnagramaComponent } from './anagrama/anagrama.component';
 import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
+//import { AdivinaMasListadoComponent } from './adivina-mas-listado/adivina-mas-listado.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -51,7 +51,7 @@ const appRoutes: Routes = [
   { path: 'agilidad', component: AgilidadAritmeticaComponent },
   { path: 'anagrama', component: AnagramaComponent },
   { path: 'piedraPapelTijera', component: PiedraPapelTijeraComponent }, 
-  { path: 'whoiam', component: WhoiamComponent },
+  { path: 'quienSoy', component: QuienSoyComponent },
   { path: '*', component: RouteErrorComponent}
 ];
 
@@ -74,12 +74,12 @@ const config = {
     HomeComponent,
     HeaderComponent,
     SlideoutComponent,
-    ArrowPipe,
-    WhoiamComponent,
+    QuienSoyComponent,
     AdivinaElNumeroComponent,
     AgilidadAritmeticaComponent,
     AnagramaComponent,
     PiedraPapelTijeraComponent,
+   // AdivinaMasListadoComponent,
     RouteErrorComponent,
     ColoresComponent
   ],

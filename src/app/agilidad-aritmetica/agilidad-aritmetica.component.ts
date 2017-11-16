@@ -44,11 +44,4 @@ export class AgilidadAritmeticaComponent implements OnInit {
       this.unJuego.jugador= this.miServicio.retornarUsuario();
       this.enviarJuego.emit(this.unJuego);
     }
-
-   
-    
-    
-    
-
-
 }

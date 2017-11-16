@@ -21,7 +21,7 @@ export class AdivinaElNumeroComponent implements OnInit {
 
     generar()
     {
-      this.unJuego = new JuegoAdivina("Adivina","Alan",true);
+      this.unJuego = new JuegoAdivina("Adivina","Mauro", true);
       this.unJuego.GenerarNuevo();
     }
   
