@@ -32,6 +32,7 @@ h1{
     /*background: #0404A6;*/
 }
 #empezar{
+<<<<<<< HEAD
     /*display: block; COMENTAR ESTA LINEA Y FUNCIONA LO DE OCULTAR MOSTRAR*/
     margin: 2rem auto;
 }
@@ -48,6 +49,10 @@ h1{
 
 .noPerdiste{
     display: none;
+=======
+    display: block;
+    margin: 2rem auto;
+>>>>>>> 22c9e33baea9121b71770f5ceb2cff6dea095e26
 }
 
 .verdeApagado{
@@ -84,6 +89,7 @@ h1{
 .azulEncendido{
     background: #4A4AFD;
     transform: scale(1.05);
+<<<<<<< HEAD
 }
 
 .empezarMostrado{
@@ -92,4 +98,6 @@ h1{
 
 .empezarEscondido{
     display: none;
+=======
+>>>>>>> 22c9e33baea9121b71770f5ceb2cff6dea095e26
 }

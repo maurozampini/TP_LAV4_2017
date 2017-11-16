@@ -1,0 +1,22 @@
+.titulo{
+    color: rgb(6, 138, 247);
+    font-family: cursive; 
+}
+
+.colorGano{
+    color:rgb(26, 255, 0);
+    font-family: cursive; 
+    font-weight: bold;
+}
+
+.colorPerdio{
+    color:rgb(252, 0, 0);
+    font-family: cursive; 
+    font-weight: bold;
+}
+
+.colorEmpato{
+    color:rgb(245, 220, 1);
+    font-family: cursive; 
+    font-weight: bold;
+}
