@@ -22,6 +22,15 @@
   align-items: center;
 }
 
+#acomodar {
+  display:  flex;
+  justify-content:  center;
+  align-content: space-between;
+  flex-wrap:  wrap;
+  align-items: center;
+  margin: 50px;
+}
+
 .flexwrap-wrap {
   flex-wrap: wrap;
 }
@@ -72,4 +81,12 @@
 
 .color-orange {
   color: orange;
+}
+
+html{ 
+  background-image: url("assets/4C1.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }

@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AppArcade';
+  title = 'AppGameMania';
   data: Array<any>;
   constructor(private http: Http) {
     this.http.get('https://jsonplaceholder.typicode.com/photos')

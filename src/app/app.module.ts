@@ -17,7 +17,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MatSidenavModule} from '@angular/material';
-import { SlideoutComponent } from './slideout/slideout.component';
 
 import {StoreModule} from '@ngrx/store';
 import {userReducer} from './user/user.reducer';
@@ -73,7 +72,6 @@ const config = {
     RegisterComponent,
     HomeComponent,
     HeaderComponent,
-    SlideoutComponent,
     QuienSoyComponent,
     AdivinaElNumeroComponent,
     AgilidadAritmeticaComponent,
