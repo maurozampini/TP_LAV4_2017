@@ -27,7 +27,7 @@
           </div>
           <div class="">
             <mat-form-field>
-              <label>Contraseña de nuevo <mat-hint *ngIf="password.invalid" >{{password.value?.length || 0}}/8</mat-hint></label>
+              <label>Contraseña de nuevo <mat-hint *ngIf="password.invalid" ></mat-hint></label>
               <input type="password" matInput placeholder="Contraseña" [formControl]="passwordAgain" required>
               <mat-error  [ngClass]="err.getErrorMessagePasswordEquals(password, passwordAgain)  ? 'error-message' : 'default-message' " *ngIf="passwordAgain.invalid || passwordAgain.dirty">{{err.getErrorMessagePasswordEquals(password, passwordAgain)}}</mat-error>
             </mat-form-field>

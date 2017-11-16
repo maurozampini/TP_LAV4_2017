@@ -46,7 +46,7 @@ div.foo{
 .letter{
   display: inline-block;
   font-weight: 600;
-  font-size: 8em;
+  font-size: 1000%;
   margin: 0;
   position: relative;
   color: #00B4F1;
