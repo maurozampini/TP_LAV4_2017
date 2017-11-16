@@ -3,14 +3,14 @@
     <div class="titulo">
     <h2>ADIVINA</h2>
     </div>
-      <input id="acomodar"  type="text" placeholder="Ingrese numero" name="unNumero" [(ngModel)]="unJuego.numeroIngresado" [ngModelOptions]="{standalone: true}" required>
+      <input id="acomodar" type="text" placeholder="Ingrese numero" name="unNumero" [(ngModel)]="unJuego.numeroIngresado" [ngModelOptions]="{standalone: true}" required>
       
       <div id="acomodar" *ngIf="unJuego.validador==true">
           <p class="" [hidden]="!unJuego.gano"> ¡Excelente! Usted ha adivinado</p>
           <p class="" [hidden]="unJuego.gano"> ¡Esta vez no se pudo! ¡Sigue jugando!</p>
         </div>
       
-      <div >
+      <div>
           <button type=button class="button button1" value="Nuevo" name="Nuevo" (click)="generar()">Nuevo</button>
           <button type=button value="Verificar" class="button button2" name="Verificar" (click)="verificar()">Verificar</button>
         </div>
