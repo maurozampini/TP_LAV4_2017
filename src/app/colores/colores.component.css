@@ -2,40 +2,46 @@ body{
     background: none;
 }
 
+h1, p{
+    color: white;
+}
 
-.boton{
+.empezar{
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
           text-align:center;
           text-decoration: none;
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    display:inline-block;
+        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        display:inline-block;
           color: #FFF;
-          background: #7F8C8D;
+          background: rgb(67, 84, 235);
           padding: 7px 20px;
           white-space: nowrap;
-          -webkit-border-radius: 5px;
-          -moz-border-radius: 5px;
           border-radius: 100px;
           margin: 10px 5px;
-          -webkit-transition: all 0.2s ease-in-out;
-          -ms-transition: all 0.2s ease-in-out;
-          -moz-transition: all 0.2s ease-in-out;
-          -o-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
 }
  
-.azul{
-background: #3498DB;
-box-shadow: 0px 5px 0px 0px #2980B9;
+.empezar:hover{
+          background: rgb(0, 15, 126);
+          transition: all 0.2s ease-in-out;
 }
 
-.azul:hover{
-background: #39a0e5;
+
+/* .azul:hover{
+    background: #3228f3;
 }
 
-.azul:active{
-box-shadow: 0px 2px 0px 0px #2980B9;
+.verde:hover{
+    background: #00e91f;
 }
+
+.amarillo:hover{
+    background: #d0ff00;
+}
+
+.rojo:hover{
+    background: #ff0000;
+} */
 
 h1{
     text-align: center;

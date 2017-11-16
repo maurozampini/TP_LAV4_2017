@@ -7,6 +7,6 @@ export class CreateControlsService {
   constructor() { }
 
   email = (): FormControl => new FormControl('', [Validators.required, Validators.email]);
-  password = (): FormControl => new FormControl('', [Validators.required, Validators.minLength(8)]);
+  password = (): FormControl => new FormControl('', [Validators.required, Validators.minLength(6)]);
 
 }

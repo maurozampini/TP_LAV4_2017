@@ -25,6 +25,10 @@ export class LoginComponent implements OnInit {
   email: FormControl;
   password: FormControl;
 
+  usuarioTest: string;
+  passwordTest: string;
+  selectedUser: string;
+
   showNavEvent = new Event('showNav');
   hideNavEvent = new Event('hideNav');
 
@@ -63,6 +67,36 @@ export class LoginComponent implements OnInit {
       })
       .catch(val => console.log(val))
       .then( _ => this.isLoading = false);
+  }
+
+  SeleccionarUsuario(){
+    switch(this.selectedUser){
+      case "admin":{
+        this.usuarioTest="admin@admin.com";
+        this.passwordTest="222222";
+        break;
+      }
+      case "usuario":{
+        this.usuarioTest="usuario@usuario.com";
+        this.passwordTest="111111";
+        break;
+      }
+      case "invitado":{
+        this.usuarioTest="invitado@invitado.com";
+        this.passwordTest="333333";
+        break;
+      }                
+      case "jugador1":{
+        this.usuarioTest="j1@jugador.com";
+        this.passwordTest="444444";
+        break;
+      }
+      case "jugador2" :{
+        this.usuarioTest="j2@jugador.com";
+        this.passwordTest="555555";
+        break;
+      }        
+    }
   }
 
   ngOnInit() {

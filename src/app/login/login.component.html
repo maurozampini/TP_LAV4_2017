@@ -18,12 +18,12 @@
             </div>         
           </div>
         </div>  
-          <div class="menu row form-body full-width">
+          <div class="menu row form-body " id="acomodar">
           <h4 class="h4">Ingrese sus datos</h4>
           <div class="row form-body full-width">
             <div class="col hide-on-small-only fill m2 l2"></div>
             <div class="col form-center s12 m8 l8">
-              <mat-progress-bar mode="indeterminate" class="" *ngIf ="isLoading"></mat-progress-bar>
+              <mat-progress-bar mode="buffer" class="" *ngIf ="isLoading"></mat-progress-bar>
               <div class="form-controler">
                 <mat-form-field>
                   <label>Correo electrónico</label>
@@ -43,7 +43,14 @@
                   <button mat-button [routerLink]="['/register']" class="waves-effect waves-red btn" color="primary">Registrarse</button>
               </div>
             </div>
+            
+                  
+
+
           </div>
+          <!-- <button style="width:50%; margin: 0 auto; border-radius: 25px; color:black; font-weight: bold" name="firstField" [(ngModel)]="selectedUser" (click)="SeleccionarUsuario()">Administrador</button> -->
+
+
         </div>
       </div>
      </div>

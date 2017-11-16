@@ -11,11 +11,11 @@
       <p id="perdiste" [ngClass]="{'perdiste': perder == 'perdiste', 'noPerdiste': perder == 'noPerdiste'}">¡PERDISTE! Llegaste al nivel {{nivel}}. Hacé clic en EMPEZAR para volver a jugar</p>
       <p id="salida">NIVEL {{nivel}}</p>
       <div id="aparato">
-          <div id="verde" class="color verdeApagado" (click)="compruebaPulsacion(verde)" [ngClass]="{'verdeApagado': verde == 'verdeA', 'verdeEncendido': verde == 'verdeE', 'rojoEncendido': verde == 'rojoE'}"></div>
+          <div id="verde" class="color verde" (click)="compruebaPulsacion(verde)" [ngClass]="{'verdeApagado': verde == 'verdeA', 'verdeEncendido': verde == 'verdeE', 'rojoEncendido': verde == 'rojoE'}"></div>
           <div id="rojo" class="color rojo" (click)="compruebaPulsacion(rojo)" [ngClass]="{'rojoApagado': rojo == 'rojoA', 'rojoEncendido': rojo == 'rojoE'}"></div>
           <div id="amarillo" class="color amarillo" (click)="compruebaPulsacion(amarillo)" [ngClass]="{'amarilloApagado': amarillo == 'amarilloA', 'amarilloEncendido': amarillo == 'amarilloE', 'rojoEncendido': amarillo == 'rojoE'}"></div>
           <div id="azul" class="color azul" (click)="compruebaPulsacion(azul)" [ngClass]="{'azulApagado': azul == 'azulA', 'azulEncendido': azul == 'azulE', 'rojoEncendido': azul == 'rojoE'}"></div>
       </div>
-      <button class="boton" id="empezar" class="empezar" (click)="comienzaPartida()" [ngClass]="{'empezarMostrado': empezar == 'mostrar', 'empezarEscondido': empezar == 'esconder'}">EMPEZAR</button>
+      <button id="empezar" class="empezar" (click)="comienzaPartida()" [ngClass]="{'empezarMostrado': empezar == 'mostrar', 'empezarEscondido': empezar == 'esconder'}">EMPEZAR</button>
   </body>
   </html>
