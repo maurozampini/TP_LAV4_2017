@@ -34,7 +34,7 @@ import { RouteErrorComponent } from './route-error/route-error.component';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdivinaElNumeroComponent } from './adivina-el-numero/adivina-el-numero.component';
 import { JuegoServiceService } from './servicios/juego-service.service';
-import { Juego } from './clases/Juego';
+import { Juego } from './clases/juego';
 import { ColoresComponent } from './colores/colores.component';
 import { AgilidadAritmeticaComponent } from './agilidad-aritmetica/agilidad-aritmetica.component';
 import { AnagramaComponent } from './anagrama/anagrama.component';
