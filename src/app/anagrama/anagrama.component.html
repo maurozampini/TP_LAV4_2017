@@ -1,6 +1,6 @@
 
 <div align="center" class="titulo">
-          <h3>ANAGRAMA</h3><br><br>
+          <h3>ANAGRAMA</h3>
         </div>
         <div align="center" class="titulo">
         <h4>¡Ordena la palabra!</h4>
@@ -10,26 +10,29 @@
     
    
         <h4>Tu palabra es: </h4>
-        <h1 >{{miJuego.palabraAJugar}}</h1>
-        
-        <input type="text" name="palabraDelUsuario" [(ngModel)]="miJuego.palabraDelUsuario">
+        <div id="acomodar">
+        <h1>{{miJuego.palabraAJugar}}</h1>
+      </div>
+        <input class="texto" id="acomodar" type="text" name="palabraDelUsuario" [(ngModel)]="miJuego.palabraDelUsuario">
         <div>
-        <input type="button" name= "Jugar" class="jugar" (click)="jugar()" value="JUGAR" style='width:250px; height:100px'>
+        <input type="button" name= "Jugar" class="jugar" (click)="jugar()" value="JUGAR">
         </div>
-        <div >
-          <input type="button" name= "Verificar" class="verificar" (click)="verificar(miJuego.palabraDelUsuario)" value="VERIFICAR" style='width:250px; height:100px'><br><br>
-
-          <input type="button" name= "Rendicion" class="merindo" (click)="rendirse()" value="ME RINDO" style='width:250px; height:100px'>
+        <div>
+          <input [disabled]="miJuego.habilitar == false" type="button" name= "Verificar" class="verificar" (click)="verificar(miJuego.palabraDelUsuario)" value="VERIFICAR">
+          <input [disabled]="miJuego.habilitar == false" type="button" name= "Rendicion" class="merindo" (click)="rendirse()" value="PASO">
         </div>
  
-
-        <div id="acomodar" >
-          <h3>CONTADOR: {{miJuego.contador}}</h3>
+<div id="acomodar">
+        <div id="acomodar">
+          <h3>VIDAS: {{miJuego.contador}}</h3>
         </div>
 
-        <div class="gano">
+        <div id="acomodar" class="gano">
             <h3>{{miJuego.resultado}}</h3>
         </div>
+        
+  </div>
+        
 
   </div>
 

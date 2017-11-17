@@ -22,10 +22,13 @@
 }
 
 .gano{
-    color: rgb(10, 45, 73);
-    left: 1050px;
-    top: 560px;
-    position:absolute;
+    font-family: Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.texto{
+    color: white;
+    background: rgb(0, 15, 126);
 }
 
 .jugar{
