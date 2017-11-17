@@ -1,20 +1,21 @@
 <app-navbar></app-navbar>
-<br><br>
+<div >
 <div align="center" class="titulo">
-<h3>PIEDRA, PAPEL O  TIJERA</h3>
+<h3>PIEDRA, PAPEL O TIJERA</h3>
 </div>
-<br><br><br>
-<table border="0" width="60%" height="auto" align="center">
-    <tr>
-        <td><img src="./assets/imagenes/piedra.png" border="1" width="200px" height="120px" (click)="Piedra()"></td>
-        <td><img src="./assets/imagenes/papel.png" border="1" width="200px" height="120px" (click)="Papel()"></td>
-        <td><img src="./assets/imagenes/tijera.png" border="1" width="200px" height="120px" (click)="Tijera()"></td>
-    </tr>
-</table>
 
-<br><br>
+<div id="acomodar">
+<img class="ppt" src="./assets/imagenes/piedra.png" border="1" width="200px" height="120px" (click)="Piedra()">
+
+<img class="ppt" src="./assets/imagenes/papel.png" border="1" width="200px" height="120px" (click)="Papel()">
+
+<img class="ppt" src="./assets/imagenes/tijera.png" border="1" width="200px" height="120px" (click)="Tijera()">
+</div>
+
+
+
 <div *ngIf="juegoPPT.numeroRandom==1" align="center">
-    <img src="./assets/imagenes/piedra.png" border="1" width="200px" height="120px">
+    <img class="ppt" src="./assets/imagenes/piedra.png" border="1" width="200px" height="120px">
 </div>
 
 <div *ngIf="juegoPPT.numeroRandom==2" align="center">
@@ -40,4 +41,6 @@
 
 <div class="colorEmpato" *ngIf="juegoPPT.resultado=='Empato'" align="center">
     <h1> EMPATO</h1>
+</div>
+
 </div>
