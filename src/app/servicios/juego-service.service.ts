@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Juego } from '../clases/Juego';
+import { Juego } from '../clases/juego';
 import { LoginComponent } from '../login/login.component';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class JuegoServiceService {
 
   constructor(traerMail: LoginComponent ) {
   this.miArray = new Array<Juego>();
-    this.unUsuario = traerMail.email.value;
+    this.unUsuario = traerMail.userName;
   }
 
   public inicializarLista(): Array<Juego>
@@ -30,6 +30,7 @@ export class JuegoServiceService {
 
   public retornarUsuario()
   { 
-    return this.unUsuario;
+    return localStorage.getItem("usuario");
+
   }
 }

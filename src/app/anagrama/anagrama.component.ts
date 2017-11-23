@@ -17,12 +17,10 @@ export class AnagramaComponent implements OnInit {
   @Output()
   enviarJuego:EventEmitter<any>= new EventEmitter<any>();
 
-constructor(private miServicio?: JuegoServiceService, private nombre?: LoginComponent) 
+constructor(private miServicio?: JuegoServiceService) 
 {
-  this.miJuego = new JuegoAnagrama("Anagrama", "AnagramaComponent", false);
-  //console.log(miServicio.user);
+  this.miJuego = new JuegoAnagrama("Anagrama", "Mauro", false);
 }
-
 
   ngOnInit() {
     this.jugar();
@@ -32,7 +30,13 @@ constructor(private miServicio?: JuegoServiceService, private nombre?: LoginComp
   {
     this.miJuego.Rendirse();
     this.miJuego.jugador= this.miServicio.retornarUsuario();
-    this.enviarJuego.emit(this.miJuego);
+    if (this.miJuego.contador == 0) {
+      this.enviarJuego.emit(this.miJuego);
+    }
+    
+    //var asd = localStorage.getItem(asd);
+    //console.log(asd);
+    //this.enviarJuego.emit(this.miJuego);
   }
 
   verificar(laPalabra: string)
@@ -44,7 +48,6 @@ constructor(private miServicio?: JuegoServiceService, private nombre?: LoginComp
       console.log(this.miJuego);
       this.enviarJuego.emit(this.miJuego);
       this.miJuego.Comenzar();
-      //this.miJuego = new JuegoAnagrama("Anagrama", "Mauro", false);
     }
     
   }

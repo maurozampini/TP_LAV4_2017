@@ -27,24 +27,30 @@
               <div class="form-controler">
                 <mat-form-field>
                   <label>Correo electrónico</label>
-                  <input matInput placeholder="correo@electronico.com" [formControl]="email" required>
+                  <input matInput placeholder="correo@electronico.com" [formControl]="email" required [(ngModel)]="usuarioTest">
                   <mat-error  [ngClass]="email.invalid  ? 'error-message' : 'default-message' " *ngIf="email.invalid && email.dirty">{{err.getErrorMessageEmail(email)}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="">
                 <mat-form-field>
                   <label>Contraseña <mat-hint *ngIf="password.invalid"></mat-hint></label>
-                  <input type="password" matInput   placeholder="Contraseña" [formControl]="password" required>
+                  <input type="password" matInput   placeholder="Contraseña" [formControl]="password" required [(ngModel)]="passwordTest">
                   <mat-error  [ngClass]="password.invalid  ? 'error-message' : 'default-message' " *ngIf="password.invalid && password.dirty">{{err.getErrorMessagePassword(password)}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="row-button">
                   <button mat-raised-button class="waves-effect waves-light blue-text lighten-2 btn" (click)="signIn()">Iniciar sesión</button>
                   <button mat-button [routerLink]="['/register']" class="waves-effect waves-red btn" color="primary">Registrarse</button>
-              </div>
+                  <button mat-raised-button class="waves-effect waves-light blue-text lighten-2 btn" (click)="Test()">Logueo defecto</button>
+                  
+                </div>
             </div>
             
-                  
+            <label>Seleccionar Usuario</label>
+            <select  style="width:50%; margin: 0 auto; border-radius: 25px; color:black; font-weight: bold"  name="firstField" [(ngModel)]="selectedUser">
+              <option value="usuario">Usuario</option>
+              <option value="admin">Administrador</option>
+            </select>
 
 
           </div>

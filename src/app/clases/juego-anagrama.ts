@@ -70,7 +70,7 @@ export class JuegoAnagrama {
             console.log(unaPalabra);
             console.log(this.palabrasOrdenadas[this.numeroRandom])
 
-            if(unaPalabra === this.palabrasOrdenadas[this.numeroRandom]){
+            if(unaPalabra == this.palabrasOrdenadas[this.numeroRandom]){
                 this.gano = true;
                 this.resultado = "GANO!";
                 this.contador += 1;

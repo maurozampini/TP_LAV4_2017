@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         this.storage.loadStoreUid(val.uid);
         this.swal.defaultAlertWithIcon('success', 'Bienvenido!');
         this.navTo.home();
-        this.userName = this.email.value;
+        var email = localStorage.setItem("usuario", this.email.value);
         console.log(this.email.value);
       })
       .catch(val => console.log(val))
@@ -102,6 +102,11 @@ export class LoginComponent implements OnInit {
         break;
       }        
     }
+  }
+
+  Test(){
+    this.usuarioTest="a@a.com";
+    this.passwordTest="12345678";
   }
 
   ngOnInit() {

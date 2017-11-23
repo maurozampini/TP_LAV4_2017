@@ -2,7 +2,7 @@
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 //import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { JuegoServiceService } from '../servicios/juego-service.service';
-import { Juego } from '../clases/Juego';
+import { Juego } from '../clases/juego';
 
 @Component({
   selector: 'app-listado-de-resultados',
