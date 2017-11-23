@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Juego } from '../clases/juego';
+import { Juego } from '../clases/Juego';
+import { LoginComponent } from '../login/login.component';
 
 @Injectable()
 export class JuegoServiceService {
 
   miArray: Array<Juego>;
-  unUsuario: string;
+  unUsuario: string = "esto es juego service";
 
-  constructor( ) {
+  constructor(traerMail: LoginComponent ) {
   this.miArray = new Array<Juego>();
+    this.unUsuario = traerMail.email.value;
   }
 
   public inicializarLista(): Array<Juego>

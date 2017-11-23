@@ -46,6 +46,10 @@ export class NavbarComponent implements OnInit {
     this.navTo.quienSoy();
   }
 
+  goToListado() {
+    this.navTo.listado();
+  }
+
   editText() {
     this.store.dispatch(new UserActions.Create('RowdyRuffBoy'));
   }

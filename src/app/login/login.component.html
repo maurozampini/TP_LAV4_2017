@@ -27,14 +27,14 @@
               <div class="form-controler">
                 <mat-form-field>
                   <label>Correo electrónico</label>
-                  <input matInput placeholder="correo@electronico.com" [formControl]="email" required value="miranda@gmail.com">
+                  <input matInput placeholder="correo@electronico.com" [formControl]="email" required>
                   <mat-error  [ngClass]="email.invalid  ? 'error-message' : 'default-message' " *ngIf="email.invalid && email.dirty">{{err.getErrorMessageEmail(email)}}</mat-error>
                 </mat-form-field>
               </div>
               <div class="">
                 <mat-form-field>
                   <label>Contraseña <mat-hint *ngIf="password.invalid"></mat-hint></label>
-                  <input type="password" matInput   placeholder="Contraseña" [formControl]="password" required value="mainola1">
+                  <input type="password" matInput   placeholder="Contraseña" [formControl]="password" required>
                   <mat-error  [ngClass]="password.invalid  ? 'error-message' : 'default-message' " *ngIf="password.invalid && password.dirty">{{err.getErrorMessagePassword(password)}}</mat-error>
                 </mat-form-field>
               </div>

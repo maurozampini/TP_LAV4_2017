@@ -14,4 +14,5 @@ export class NavToService {
   anagrama = () => this.router.navigate([`/anagrama`]);
   piedraPapelTijera = () => this.router.navigate([`/piedraPapelTijera`]);
   quienSoy = () => this.router.navigate([`/quienSoy`]);
+  listado = () => this.router.navigate([`/listado`]);  
 }

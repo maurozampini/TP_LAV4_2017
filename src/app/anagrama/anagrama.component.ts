@@ -2,6 +2,7 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { JuegoAnagrama } from '../clases/juego-anagrama';
 import { JuegoServiceService } from '../servicios/juego-service.service';
 import { SwalService } from '../services/swal.service';
+import { LoginComponent } from '../login/login.component';
 
 
 @Component({
@@ -16,9 +17,10 @@ export class AnagramaComponent implements OnInit {
   @Output()
   enviarJuego:EventEmitter<any>= new EventEmitter<any>();
 
-constructor(private miServicio?: JuegoServiceService) 
+constructor(private miServicio?: JuegoServiceService, private nombre?: LoginComponent) 
 {
-  this.miJuego = new JuegoAnagrama("Anagrama", "Mauro", false);
+  this.miJuego = new JuegoAnagrama("Anagrama", "AnagramaComponent", false);
+  //console.log(miServicio.user);
 }
 
 

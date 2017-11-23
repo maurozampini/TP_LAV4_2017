@@ -1,27 +1,20 @@
-export abstract class Juego {
-  public nombre = 'Sin Nombre';
-  public jugador: string;
-  public gano = false;
+import { LoginComponent } from "../login/login.component";
 
-  constructor(nombre?: string, gano?: boolean,jugador?:string) {
-    if (nombre)
-      this.nombre = nombre;
+export abstract class Juego{
+    public nombre: string;
+    public jugador: string;
+    public gano: boolean = false;
 
-    if (gano)
-      this.gano = gano;
-    if(jugador)
-      this.jugador=jugador;
-    else
-      this.jugador= "Mauro";
-  }
+    constructor(nombre?: string, jugador?: string, gano?: boolean)
+    {
+        this.nombre = nombre;
+        this.jugador = jugador;
+        this.gano = gano;
+    }
 
+    public abstract verificar():boolean;
 
-  
-
-  public abstract verificar():boolean; 
-  
-  public retornarAyuda() {
-    
-    return "NO hay Ayuda definida";
-  }
+    public retornarAyuda(){
+        return "No hay ayuda definida";
+    }
 }

@@ -2,6 +2,7 @@
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 //import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { JuegoServiceService } from '../servicios/juego-service.service';
+import { Juego } from '../clases/Juego';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -11,16 +12,32 @@ import { JuegoServiceService } from '../servicios/juego-service.service';
 export class ListadoDeResultadosComponent implements OnInit {
   
  @Input()
+
+ public listadoParaCompartir: Array<any>;
  listado: any;
 
+ usuario: String;
+ data: Array<any>;
  unString:string;
 
  ngOnChanges(){ }
 
+ constructor(public miServicio: JuegoServiceService) {
+   this.listadoParaCompartir = new Array<any>();
+ }
+
  
- usuario: String;
- data: Array<any>;
+
  
+ngOnInit() {
+  this.listadoParaCompartir=this.miServicio.inicializarLista();  
+}
+
+ tomarJuegoTerminado(juego: Juego)
+ {
+   this.listadoParaCompartir.push(juego);
+   this.miServicio.cargarLista(this.listadoParaCompartir); 
+ }
   
  /*miSmartTable: Ng2SmartTableModule={
   columns: {
@@ -38,14 +55,9 @@ export class ListadoDeResultadosComponent implements OnInit {
 
 
 
-  constructor(miServicio: JuegoServiceService) {
-    
-   }
 
-  ngOnInit() {
-   /* localStorage.setItem('token', JSON.stringify(this.data));
-    console.log(localStorage.getItem('token'));//probar json.parse porque devuelve un string*/
-  }
+
+
 
  
 

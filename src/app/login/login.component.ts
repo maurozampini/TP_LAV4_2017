@@ -18,6 +18,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 
 export class LoginComponent implements OnInit {
+
+  userName: string;
+
   isLoading = false;
   items: Observable<any[]>;
   item;
@@ -64,6 +67,8 @@ export class LoginComponent implements OnInit {
         this.storage.loadStoreUid(val.uid);
         this.swal.defaultAlertWithIcon('success', 'Bienvenido!');
         this.navTo.home();
+        this.userName = this.email.value;
+        console.log(this.email.value);
       })
       .catch(val => console.log(val))
       .then( _ => this.isLoading = false);

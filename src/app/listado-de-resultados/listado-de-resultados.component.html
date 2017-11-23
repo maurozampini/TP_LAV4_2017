@@ -1,6 +1,6 @@
 <!--<ng2-smart-table [settings]="miSmartTable" [source]="data"></ng2-smart-table> -->
 
-<div align="center" class="listado"><h1> LISTADO DE RESULTADOS </h1></div>
+<div align="center" class="listado"><h1> LISTA DE RESULTADOS </h1></div>
 <table class="table table-condensed" >
     <thead>
       <tr  class="tabla">
@@ -10,10 +10,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let juego of listado" class="tabla">
+      <tr *ngFor="let juego of listadoParaCompartir" class="tabla">
         <td class="tablaFila">{{juego.nombre}}</td>
-        <td class="tablaFila">{{juego.jugador}} </td> 
-        <td class="tablaFila" *ngIf="juego.gano">Gano </td>   
+        <td class="tablaFila">{{juego.jugador}}</td> 
+        <td class="tablaFila" *ngIf="juego.gano">Gano</td>   
         <td class="tablaFila" *ngIf="!juego.gano">Perdio</td>     
       </tr>
      

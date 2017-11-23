@@ -9,19 +9,17 @@ export class JuegoAnagrama {
     gano: boolean;
     contador: number = 3;
     numeroRandom: number = 0;
-    nombre: string = "";
-    jugador: string = "";
-    resultado: string = "";
+    nombre: string;
+    jugador: string;
+    resultado: string;
     habilitar: boolean;
 
-
-    constructor(unNombre?: string, jugador?: string, gano?: boolean)
+    constructor(nombre?: string, jugador?: string, gano?: boolean)
     {
-        this.nombre = unNombre;
+        this.nombre = nombre;
         this.jugador = jugador;
         this.gano = gano;
     }
-
 
     Comenzar()
     {
