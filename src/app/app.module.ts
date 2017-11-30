@@ -41,6 +41,9 @@ import { AnagramaComponent } from './anagrama/anagrama.component';
 import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
 import { ListadoDeResultadosComponent } from './listado-de-resultados/listado-de-resultados.component';
 import { AnagramaMasListadoComponent } from './anagrama-mas-listado/anagrama-mas-listado.component';
+import { AgilidadMasListadoComponent } from './agilidad-mas-listado/agilidad-mas-listado.component';
+import { AdivinaMasListadoComponent } from './adivina-mas-listado/adivina-mas-listado.component';
+import { PiedraPapelTijeraMasListadoComponent } from './piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
 
 
 const appRoutes: Routes = [
@@ -49,10 +52,10 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: ListgamesComponent },
   { path: 'colores', component: ColoresComponent },
-  { path: 'adivina', component: AdivinaElNumeroComponent },
-  { path: 'agilidad', component: AgilidadAritmeticaComponent },
+  { path: 'adivina', component: AdivinaMasListadoComponent },
+  { path: 'agilidad', component: AgilidadMasListadoComponent },
   { path: 'anagrama', component: AnagramaMasListadoComponent },
-  { path: 'piedraPapelTijera', component: PiedraPapelTijeraComponent }, 
+  { path: 'piedraPapelTijera', component: PiedraPapelTijeraMasListadoComponent }, 
   { path: 'quienSoy', component: QuienSoyComponent },
   { path: 'listado', component: ListadoDeResultadosComponent },
   { path: '*', component: RouteErrorComponent}
@@ -78,9 +81,12 @@ const config = {
     HeaderComponent,
     QuienSoyComponent,
     AdivinaElNumeroComponent,
+    AdivinaMasListadoComponent,
     AgilidadAritmeticaComponent,
+    PiedraPapelTijeraMasListadoComponent,
     AnagramaComponent,
     AnagramaMasListadoComponent,
+    AgilidadMasListadoComponent,
     PiedraPapelTijeraComponent,
     ListadoDeResultadosComponent,
     RouteErrorComponent,
