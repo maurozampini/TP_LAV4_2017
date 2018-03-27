@@ -1,6 +1,28 @@
 
 <app-navbar></app-navbar>
 <app-game></app-game>
+<html>
+<body>
+  
+
+<div (mouseleave) = "leave()" class="contenedor">
+  
+  <button (mouseover) = "enter()" class="botonF1">
+    <span>+</span>
+  </button>
+  <button [ngClass]="{'animacionVer': animacion == 'si'}" class="btn botonF2">
+    <span>+</span>
+  </button>
+  <button [ngClass]="{'animacionVer': animacion == 'si'}" class="btn botonF3">
+    <span>+</span>
+  </button>
+  <button [ngClass]="{'animacionVer': animacion == 'si'}" class="btn botonF4">
+    <span>+</span>
+  </button>
+  <button [ngClass]="{'animacionVer': animacion == 'si'}" class="btn botonF5">
+    <span>+</span>
+  </button>
+   </div>
   <!-- <app-adivina-el-numero></app-adivina-el-numero> -->
   <!-- <app-game></app-game>
   <app-game></app-game>
@@ -10,3 +32,5 @@
 
 <!-- 
 <button class="botonF6" (click)="confirmarCerrarSesion()">-</button> -->
+</body>
+</html>

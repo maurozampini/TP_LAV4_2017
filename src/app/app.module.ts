@@ -14,7 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MatSidenavModule} from '@angular/material';
 
@@ -77,7 +76,6 @@ const config = {
     GameComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     HeaderComponent,
     QuienSoyComponent,
     AdivinaElNumeroComponent,

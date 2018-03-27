@@ -16,7 +16,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   unJuego: JuegoAgilidad;
 
   @Output()
-  enviarJuego:EventEmitter<any>= new EventEmitter<any>();
+  enviarJuego:EventEmitter<any> = new EventEmitter<any>();
 
   usuario: string;
   

@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
     dispatchEvent(this.hideNavEvent);
     this.item = db.object('items/item');
     this.item.valueChanges();
-    // this.items = db.collection('items').valueChanges();
   }
 
   signIn() {

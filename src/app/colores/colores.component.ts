@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 
 @Component({
   selector: 'app-colores',
@@ -91,7 +92,7 @@ enciendeColor(){
   }
 
   setTimeout(() => {
-    console.log('Test Si llego al nivel 3 aumenta velocidad color');
+    console.log('Test aumento velocidad al pasar de nivel');
     this.apagaColor();
 }, 750 - (this.nivel * 50));
 

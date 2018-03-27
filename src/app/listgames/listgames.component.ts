@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatFormFieldModule, MatIcon} from '@angular/material';
 
 @Component({
   selector: 'app-listgames',
@@ -8,11 +9,34 @@ import { Component, OnInit } from '@angular/core';
 export class ListgamesComponent implements OnInit {
   showNavEvent = new Event('showNav');
 
+animacion: string = "no";
+
   constructor() {
     dispatchEvent(this.showNavEvent);
   }
 
   ngOnInit() {
+    
   }
 
+  enter() {
+    this.animacion = "si";
+    //var btn = <HTMLElement> document.querySelector('#btn');
+    //btn.classList.add('.animacionVer');
+    console.log("hover boton");
+  }
+  leave() {
+    this.animacion = "no";
+    //var btn = <HTMLElement> document.querySelector('#btn');
+    //btn.classList.add('.animacionVer');
+    console.log("mouseleave boton");
+  }
+/*
+  $('.botonF1').hover(function(){
+    $('.btn').addClass('animacionVer');
+  })
+  $('.contenedor').mouseleave(function(){
+    $('.btn').removeClass('animacionVer');
+  })
+*/
 }

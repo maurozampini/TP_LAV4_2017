@@ -1,35 +1,6 @@
 <div class="navbar full-width fondo">
   <a href="#" id="navbar" class="button-collapse"></a>
-    <p router (click)="goToQuienSoy()" class="navbar full-width">QUIEN SOY</p>
-    <p router (click)="goToListado()" class="navbar full-width">LISTADO</p>
+    <button mat-raised-button router (click)="goToQuienSoy()" class="navbar full-width">QUIEN SOY</button>
+    <button mat-raised-button router (click)="goToListado()" class="navbar full-width">LISTADO</button>
 </div>
 
-<style>
-  .navbar {
-    text-align: center;
-    cursor: pointer;
-  }
-
-  .a {
-    background: red;
-  }
-
-  .icon {
-    padding: .5em;
-  }
-
-  #navbar {
-    z-index: 1;
-    margin: 0;
-    padding: 0;
-    display: block;
-    background: black;
-    border-bottom: 1px solid orange;
-  }
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
-</style>
