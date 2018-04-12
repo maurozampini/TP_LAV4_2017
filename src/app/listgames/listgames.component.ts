@@ -10,7 +10,7 @@ export class ListgamesComponent implements OnInit {
   showNavEvent = new Event('showNav');
 
 animacion: string = "no";
-
+textButtonTwo: string = "+";
   constructor() {
     dispatchEvent(this.showNavEvent);
   }
@@ -18,6 +18,14 @@ animacion: string = "no";
   ngOnInit() {
     
   }
+
+enterButtonTwo() {
+  this.textButtonTwo = "Quien soy";
+}
+
+leaveButtonTwo() {
+  this.textButtonTwo = "+";
+}
 
   enter() {
     this.animacion = "si";
