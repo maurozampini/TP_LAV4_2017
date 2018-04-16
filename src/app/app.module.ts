@@ -43,6 +43,7 @@ import { AnagramaMasListadoComponent } from './anagrama-mas-listado/anagrama-mas
 import { AgilidadMasListadoComponent } from './agilidad-mas-listado/agilidad-mas-listado.component';
 import { AdivinaMasListadoComponent } from './adivina-mas-listado/adivina-mas-listado.component';
 import { PiedraPapelTijeraMasListadoComponent } from './piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
+import { TatetiComponent } from './tateti/tateti.component';
 
 
 const appRoutes: Routes = [
@@ -88,7 +89,8 @@ const config = {
     PiedraPapelTijeraComponent,
     ListadoDeResultadosComponent,
     RouteErrorComponent,
-    ColoresComponent
+    ColoresComponent,
+    TatetiComponent
   ],
   imports: [
     BrowserModule,

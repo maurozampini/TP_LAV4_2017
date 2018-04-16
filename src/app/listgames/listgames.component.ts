@@ -20,7 +20,7 @@ textButtonTwo: string = "+";
   }
 
 enterButtonTwo() {
-  this.textButtonTwo = "Quien soy";
+  this.textButtonTwo = "QuienSoy";
 }
 
 leaveButtonTwo() {
