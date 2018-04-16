@@ -13,6 +13,7 @@ export class NavToService {
   agilidad = () => this.router.navigate([`/agilidad`]);
   anagrama = () => this.router.navigate([`/anagrama`]);
   piedraPapelTijera = () => this.router.navigate([`/piedraPapelTijera`]);
+  tateti = () => this.router.navigate([`/tateti`]);
   quienSoy = () => this.router.navigate([`/quienSoy`]);
   listado = () => this.router.navigate([`/listado`]);  
 }

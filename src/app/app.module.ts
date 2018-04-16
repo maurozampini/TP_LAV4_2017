@@ -58,7 +58,8 @@ const appRoutes: Routes = [
   { path: 'piedraPapelTijera', component: PiedraPapelTijeraMasListadoComponent }, 
   { path: 'quienSoy', component: QuienSoyComponent },
   { path: 'listado', component: ListadoDeResultadosComponent },
-  { path: '*', component: RouteErrorComponent}
+  { path: '*', component: RouteErrorComponent },
+  { path: 'tateti', component: TatetiComponent }
 ];
 
 const config = {

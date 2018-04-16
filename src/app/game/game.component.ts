@@ -8,7 +8,6 @@ interface AppState {
   user: User;
 }
 
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -36,6 +35,10 @@ export class GameComponent implements OnInit {
 
   goToPiedraPapelTijera() {
     this.navTo.piedraPapelTijera();
+  }
+
+  goToTateti(){
+    this.navTo.tateti();
   }
 
   testReducer() {
