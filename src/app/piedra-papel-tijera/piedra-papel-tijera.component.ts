@@ -18,12 +18,12 @@ export class PiedraPapelTijeraComponent implements OnInit {
 
   constructor(private miServicio?: JuegoServiceService) 
   { 
-    this.juegoPPT = new PiedraPapelTijera("Piedra, Papel o Tijera", "Alan", true);
+    this.juegoPPT = new PiedraPapelTijera("Piedra, Papel o Tijera", "Mauro", true);
   }
 
   Piedra()
   {
-    this.juegoPPT = new PiedraPapelTijera("Piedra, Papel o Tijera", "Alan", true);
+    this.juegoPPT = new PiedraPapelTijera("Piedra, Papel o Tijera", "Mauro", true);
     this.juegoPPT.Piedra();
     this.juegoPPT.jugador = this.miServicio.retornarUsuario();
     this.enviarJuego.emit(this.juegoPPT);

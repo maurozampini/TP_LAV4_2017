@@ -44,6 +44,7 @@ import { AgilidadMasListadoComponent } from './agilidad-mas-listado/agilidad-mas
 import { AdivinaMasListadoComponent } from './adivina-mas-listado/adivina-mas-listado.component';
 import { PiedraPapelTijeraMasListadoComponent } from './piedra-papel-tijera-mas-listado/piedra-papel-tijera-mas-listado.component';
 import { TatetiComponent } from './tateti/tateti.component';
+import { FloatingMenuComponent } from './floating-menu/floating-menu.component';
 
 
 const appRoutes: Routes = [
@@ -91,7 +92,8 @@ const config = {
     ListadoDeResultadosComponent,
     RouteErrorComponent,
     ColoresComponent,
-    TatetiComponent
+    TatetiComponent,
+    FloatingMenuComponent
   ],
   imports: [
     BrowserModule,

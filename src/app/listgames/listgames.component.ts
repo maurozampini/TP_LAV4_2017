@@ -9,8 +9,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatFor
 export class ListgamesComponent implements OnInit {
   showNavEvent = new Event('showNav');
 
-animacion: string = "no";
-textButtonTwo: string = "+";
+
   constructor() {
     dispatchEvent(this.showNavEvent);
   }
@@ -19,26 +18,7 @@ textButtonTwo: string = "+";
     
   }
 
-enterButtonTwo() {
-  this.textButtonTwo = "QuienSoy";
-}
 
-leaveButtonTwo() {
-  this.textButtonTwo = "+";
-}
-
-  enter() {
-    this.animacion = "si";
-    //var btn = <HTMLElement> document.querySelector('#btn');
-    //btn.classList.add('.animacionVer');
-    console.log("hover boton");
-  }
-  leave() {
-    this.animacion = "no";
-    //var btn = <HTMLElement> document.querySelector('#btn');
-    //btn.classList.add('.animacionVer');
-    console.log("mouseleave boton");
-  }
 /*
   $('.botonF1').hover(function(){
     $('.btn').addClass('animacionVer');
