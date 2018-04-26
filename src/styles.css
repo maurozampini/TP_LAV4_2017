@@ -22,14 +22,14 @@
   align-items: center;
 }
 
-/* #acomodar {
-  display:  flex;
+ #acomodar {
+  display: flex;
   justify-content:  center;
   align-content: space-between;
   flex-wrap:  wrap;
   align-items: center;
-  margin: 50px;
-} */
+  margin: 40px;
+} 
 
 .flexwrap-wrap {
   flex-wrap: wrap;

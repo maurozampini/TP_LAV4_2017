@@ -1,19 +1,21 @@
 .contenido{
   height: 250px;
   width: 300px;
+  margin: 20px;
+  transition: 0.5s;
 }
-#acomodar {
-  /* display: inline-block; */
-  height: 250px;
-  
 
+.contenido:hover{
+  cursor: pointer;
+  transition: 0.5s;
+  transform: scale(1.05);
+}
+
+#acomodarImg {
+  height: 250px;
   display: flex;  
-  margin: 0 auto;
-/* text-align:left; */
- width: 100%;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
+  margin: 0;
+  width: 100%;
 } 
 
 .juego{

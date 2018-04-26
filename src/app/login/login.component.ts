@@ -10,6 +10,7 @@ import { SwalService } from '../services/swal.service';
 import { ValidatefieldsService } from '../services/validatefields.service';
 import { CreateControlsService } from '../services/create-controls.service';
 import { AngularFireDatabase } from 'angularfire2/database';
+import '../../assets/login-animation.js';
 
 @Component({
   selector: 'app-login',
@@ -32,9 +33,6 @@ export class LoginComponent implements OnInit {
   passwordTest: string;
   selectedUser: string;
 
-  showNavEvent = new Event('showNav');
-  hideNavEvent = new Event('hideNav');
-
   constructor(
     private afAuth: AuthService,
     private validate: ValidatefieldsService,
@@ -48,9 +46,12 @@ export class LoginComponent implements OnInit {
     this.password = this.addControl.password();
     this.controls.push(this.email);
     this.controls.push(this.password);
-    dispatchEvent(this.hideNavEvent);
     this.item = db.object('items/item');
     this.item.valueChanges();
+  }
+
+  ngAfterViewInit() {
+    (window as any).initialize();
   }
 
   signIn() {
@@ -64,43 +65,42 @@ export class LoginComponent implements OnInit {
     this.afAuth.signInWhitEmailAndPassword(this.email.value, this.password.value)
       .then(val => {
         this.storage.loadStoreUid(val.uid);
-        this.swal.defaultAlertWithIcon('success', 'Bienvenido!');
+        this.swal.defaultAlertWithIcon('success', '¡Bienvenido!');
         this.navTo.home();
         var email = localStorage.setItem("usuario", this.email.value);
         console.log(this.email.value);
       })
-      .catch(val => console.log(val))
+      .catch(val => {
+        this.showAlert(val.message, "Error al ingresar");
+        console.log(val)
+      })
       .then( _ => this.isLoading = false);
   }
 
-  SeleccionarUsuario(){
-    switch(this.selectedUser){
-      case "admin":{
-        this.usuarioTest="admin@admin.com";
-        this.passwordTest="222222";
+  showAlert(mensaje: string, titulo: string)
+  {
+    switch(mensaje)
+    {
+      case "The email address is badly formatted.":
+      {
+        mensaje = "El email no contiene un formato correcto";
         break;
       }
-      case "usuario":{
-        this.usuarioTest="usuario@usuario.com";
-        this.passwordTest="111111";
-        break;
+
+      case "The password is invalid or the user does not have a password.":
+      {
+        mensaje = "La clave es incorrecta, intente nuevamente";
+        break;        
       }
-      case "invitado":{
-        this.usuarioTest="invitado@invitado.com";
-        this.passwordTest="333333";
-        break;
-      }                
-      case "jugador1":{
-        this.usuarioTest="j1@jugador.com";
-        this.passwordTest="444444";
-        break;
+
+      case "There is no user record corresponding to this identifier. The user may have been deleted.":
+      {
+        mensaje = "Usuario inexistente.";
+        break;        
       }
-      case "jugador2" :{
-        this.usuarioTest="j2@jugador.com";
-        this.passwordTest="555555";
-        break;
-      }        
     }
+
+    this.swal.defaultAlertWithIcon('error', mensaje);
   }
 
   Test(){

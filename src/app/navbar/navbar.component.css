@@ -1,18 +1,23 @@
-.example-container {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
+ .fondo{
+    padding: 5px;
+    background-color: #4eb8dd;
   }
 
-  .fondo{
+  div{
+    display: inline-block;
+    text-align: center;
+    
+  }
+  
+  button{
+    transition: 0.5s;
+    color: black;
     background-color: white;
+  }
+
+  button:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    color: white;
+    background-color: orange;
   }

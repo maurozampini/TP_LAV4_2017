@@ -4,6 +4,7 @@ import { User } from '../user/user.model';
 import { Store } from '@ngrx/store';
 import * as UserActions from '../user/user.actions';
 import { NavToService } from '../services/nav-to.service';
+import {Location} from '@angular/common';
 declare var jquery: any;
 declare var $: any;
 
@@ -23,7 +24,7 @@ export class NavbarComponent implements OnInit {
   show = false;
   user$: Observable<User>;
 
-  constructor(private store: Store<AppState>, private navTo: NavToService) {
+  constructor(private store: Store<AppState>, private navTo: NavToService, private _location: Location) {
   
 
 
@@ -40,6 +41,13 @@ export class NavbarComponent implements OnInit {
     });
     this.user$ = this.store.select('user');
     console.log(this.user$);
+  }
+
+  volver(){
+    if (!this._location.isCurrentPathEqualTo('/home'))
+    {
+      this._location.back();
+    }
   }
 
   goToQuienSoy() {
