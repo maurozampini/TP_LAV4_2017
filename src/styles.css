@@ -64,25 +64,6 @@
   margin: 10px 0 10px 0;
 }
 
-.color-white {
-  color: white;
-}
-
-.color-red {
-  color: red;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-.color-yellow {
-  color: yellow;
-}
-
-.color-orange {
-  color: orange;
-}
-
 body {
       background-image: url("assets/imagenes/fantasmas.jpg");
       background-position: center center;
