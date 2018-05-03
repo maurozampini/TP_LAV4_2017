@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-/*import hola from  '../../assets/tateti.js';*/
+import hola from  '../../assets/tateti.js';
 declare var jquery: any;
 declare var $: any;
 
@@ -13,13 +13,18 @@ export class TatetiComponent implements OnInit {
   Element: HTMLElement;  
   
   ngOnInit(){
-
+    hola.v()
+    var x   = document.getElementsByClassName('result');
+    var g = x[0]
+  
   }
  
   x () {
+    hola.v()
+  var x   = document.getElementsByClassName('result');
+  var g = x[0]
 
-
-console.log();
+console.log(g);
   }
 
 

@@ -1,19 +1,21 @@
 // 1
 
-$(document).ready(restart);
+//(document).ready(restart);
 // 2
  var IA_PLAYER = 1,
  USER_PLAYER = 2;
+ const v = () => restart();
 
 
 // 3
  // Resetea y comienza el juego
  function restart() {
+     console.log("DDDDDDDDDDDD");
  $('.result').html('');
  $('.restart').hide();
 
 
- generateUIBoard();
+ // ();
  userMoves(getInitialBoard());
  }
 
@@ -187,3 +189,20 @@ $(document).ready(restart);
  return (board[0][0] != null && (board[0][0] == board[1][1] && board[1][1] == board[2][2]))
  || (board[0][2] != null && (board[0][2] == board[1][1] && board[1][1] == board[2][0]));
  }
+
+ export default {
+    v,
+    restart,
+    generateUIBoard,
+    userMoves,
+    getInitialBoard,
+    updateUI,
+    winner,
+    checkCell,
+    iaMoves,
+    randomIntTo,
+    getFreePositions,
+    tatetiCol,
+    tatetiRow,
+    tatetiDiagonals
+}   
