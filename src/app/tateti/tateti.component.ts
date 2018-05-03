@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import '../../assets/tateti.js';
+/*import hola from  '../../assets/tateti.js';*/
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-tateti',
@@ -7,6 +9,19 @@ import '../../assets/tateti.js';
   styleUrls: ['./tateti.component.css']
 })
 export class TatetiComponent implements OnInit {
-  ngOnInit(){}
+  
+  Element: HTMLElement;  
+  
+  ngOnInit(){
+
+  }
+ 
+  x () {
+
+
+console.log();
+  }
+
+
 
 }
