@@ -1,20 +1,81 @@
-<app-navbar></app-navbar>
 
-<ul>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-	<li class="cell"></li>
-</ul>
-
-	<span class="result"></span>
-
-	<button class="restart" id="acomodar" (click)="x()">Volver a jugar</button>
-
-
-
+<div class="centertateti">
+    <div style="text-align:center; color:red;">
+        <h1>{{nuevoJuego.nombre}}</h1>
+    </div>
+        
+          <div class="contenedor">
+              <div class="text-center">
+                <div *ngIf="nuevoJuego.maquinaJugador != -1">
+                    <h1 *ngIf="!juegoTerminado && nuevoJuego.maquinaJugador == nuevoJuego.turno">Turno: Maquina</h1>
+                    <h1 *ngIf="!juegoTerminado && nuevoJuego.maquinaJugador != nuevoJuego.turno">Turno: Jugador</h1>
+                    <h1 *ngIf="juegoTerminado">{{nuevoJuego.gano ? '¡Ganaste!' : '¡Perdiste!'}}</h1>
+                </div>
+          <table class="table-center">
+            <tr>
+                <td class="cell cerocero" (click)="juego({ x: 0, y:0})">
+                  <div *ngIf="nuevoJuego.juego[0][0].value != -1">
+                    <i *ngIf="nuevoJuego.juego[0][0].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[0][0].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                  </div>
+                </td>
+                <td class="cell cerouno" (click)="juego({ x: 0, y:1})">
+                    <div *ngIf="nuevoJuego.juego[0][1].value != -1">
+                  <i *ngIf="nuevoJuego.juego[0][1].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                  <i *ngIf="nuevoJuego.juego[0][1].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                    </div>
+                </td>
+                <td class="cell cerodos" (click)="juego({ x: 0, y:2})">
+                    <div *ngIf="nuevoJuego.juego[0][2].value != -1">
+                  <i *ngIf="nuevoJuego.juego[0][2].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                  <i *ngIf="nuevoJuego.juego[0][2].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="cell unocero" (click)="juego({ x: 1, y:0})">
+                    <div *ngIf="nuevoJuego.juego[1][0].value != -1">
+                    <i *ngIf="nuevoJuego.juego[1][0].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[1][0].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+</div>
+                </td>
+                <td class="cell" (click)="juego({ x: 1, y:1})">
+                    <div *ngIf="nuevoJuego.juego[1][1].value != -1">
+                    <i *ngIf="nuevoJuego.juego[1][1].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[1][1].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                    </div>
+                </td>
+                <td class="cell unodos" (click)="juego({ x: 1, y:2})">
+                    <div *ngIf="nuevoJuego.juego[1][2].value != -1">
+                    <i *ngIf="nuevoJuego.juego[1][2].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[1][2].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="cell doscero" (click)="juego({ x: 2, y:0})">
+                    <div *ngIf="nuevoJuego.juego[2][0].value != -1">
+                    <i *ngIf="nuevoJuego.juego[2][0].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[2][0].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                    </div>
+                    </td>
+                <td class="cell dosuno" (click)="juego({ x: 2, y:1})">
+                    <div *ngIf="nuevoJuego.juego[2][1].value != -1">
+                    <i *ngIf="nuevoJuego.juego[2][1].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[2][1].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                    </div>
+                    </td>
+                <td class="cell dosdos" (click)="juego({ x: 2, y:2})">
+                    <div *ngIf="nuevoJuego.juego[2][2].value != -1">
+                    <i *ngIf="nuevoJuego.juego[2][2].value == 0" class="far fa-circle" style="font-size: 90px;"></i>
+                    <i *ngIf="nuevoJuego.juego[2][2].value == 1" class="fas fa-times" style="font-size: 90px;"></i>
+                    </div>
+                    </td>
+            </tr>
+          </table>
+          <button type="button" class="btn btn-primary" (click)="nuevo()">Nuevo</button>
+          <button type="button" class="btn btn-primary" (click)="volver()">Volver</button>
+          </div>
+          </div>
+        
+</div>
